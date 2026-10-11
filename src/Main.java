@@ -124,5 +124,47 @@ public class Main {
         System.out.println("Unclosed bracket : " + isBalanced("((("));
         System.out.println("Extra closing bracket : " + isBalanced("())"));
         System.out.println("Null expression : " + isBalanced(null));
+
+
+        // Part 3: Arrays and Strings
+        System.out.println("\n=== Part 3: Arrays and Strings ===");
+
+        int[] numbers = {1, 2, 3, 4, 5};
+        ArrayString.rotateRight(numbers, 2);
+
+        System.out.println("Rotated array: "
+                + java.util.Arrays.toString(numbers));
+
+        System.out.println("isAnagram (listen, silent): "
+                + ArrayString.isAnagram("listen", "silent"));
+
+        int[] sortedNumbers = {1, 2, 4, 6, 8};
+        int[] indices =
+                ArrayString.twoSumSorted(sortedNumbers, 10);
+
+        System.out.println("Two sum indices: "
+                + java.util.Arrays.toString(indices));
+
+        // Part 4: LRU Cache
+        System.out.println("\n=== Part 4: LRU Cache ===");
+
+        LRUCache lru = new LRUCache(2);
+
+        lru.put(1, 10);
+        lru.put(2, 20);
+
+        System.out.println("get(1): " + lru.get(1));
+
+        lru.put(3, 30); // Evicts key 2
+
+        System.out.println("get(2): " + lru.get(2));
+        System.out.println("get(3): " + lru.get(3));
+
+        lru.put(4, 40); // Evicts key 1
+
+        System.out.println("get(1): " + lru.get(1));
+        System.out.println("get(3): " + lru.get(3));
+        System.out.println("get(4): " + lru.get(4));
+
     }
 }
